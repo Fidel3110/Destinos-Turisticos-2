@@ -5,6 +5,8 @@ def index(request):
     dests = Destination.objects.all()
     return render(request,'index.html',{'dests':dests})
 def listado(request):
-    listado=Destination.objects.all()
-    contexto= {'listado':listado}
+    destinos = Destination.objects.all()
+    contexto  = {
+        'destinos':destinos
+    }
     return render(request,'listado.html',contexto)

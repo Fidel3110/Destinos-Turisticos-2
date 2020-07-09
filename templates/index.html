@@ -33,13 +33,14 @@
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="index.html">Home</a></li>
 									<li><a href="accounts/destino">destino</a></li>
-									<li><a href="accounts/listado">listado</a></li>
 									{% if user.is_authenticated %}
 									<li>Hello, {{user.first_name}} </li>
 									<li><a href="accounts/logout">Logout</a></li>
+									<li><a href="listado">listado</a></li>
 									{%else%}
 									<li><a href="accounts/register">Register</a></li>
 									<li><a href="accounts/login">Login</a></li>
+									
 									{% endif%}
 								</ul>
 							</nav>

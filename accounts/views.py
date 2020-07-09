@@ -46,17 +46,4 @@ def register(request):
 def logout(request) :
     auth.logout(request)
     return redirect('/')
-def destino(request) :
-    if request.method == 'POST' :
-        name = request.POST['name']
-        desc = request.POST['desc']
-        img = request.POST['img']
-        price = request.POST['price']
-        offer = request.POST['offer']
-        Destination=Destination(name=name, desc=desc, img=img,price=price,offer=offer)
-        Destination.save();
-        print('destino created')
-        return redirect('/')
-    return render (request ,'ingresarDestino.html')
-def listado(request):
-    return render(request,'listado.html')
+

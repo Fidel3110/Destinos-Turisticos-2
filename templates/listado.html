@@ -1,26 +1,39 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html>
-    <body>
-        <tr>
-            <table>
-                <thead>
-                    <th>NOMBRE</th>
-                    <th>IMAGEN</th>
-                    <th>DESCRIPCION</th>
-                    <th>PRECIO</th>
-                    <th>OFERTA</th>
-                </thead>
-                <tbody>
-                    {%for destinos in destinos%}
-                    <tr>
-                        <td>{{destino.name}}</td>
-                        <td>{{destino.img}}</td>
-                        <td>{{destino.desc}}</td>
-                        <td>{{destino.price}}</td>
-                        <td>{{destino.offer}}</td>
-                    </tr>
-                    {%endfor%}
-                </tbody>
-            </table>
-        </tr>
-    </body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Destinos </title>
+  </head>
+  <body>
+    <center>
+    <h1>Lista de Destinos Turisticos</h1>
+      <table >
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Oferta</th>
+            <th>Menu</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for destino in destinos %}
+          <tr>
+            <td>{{ destino.name }}</td>
+            <td>{{ destino.img }}</td>
+            <td>{{destino.desc}}</td>
+            <td>{{destino.price}}</td>
+            <td>{{destino.offer}}</td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </center>
+  </body>
+</html>
