@@ -4,12 +4,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Lista de Destinos </title>
+    <title>{% block titulo%}Lista de Destinos{% endblock titulo%} </title>
   </head>
   <body>
+    {% block cuerpo %}
     <center>
     <h1>Lista de Destinos Turisticos</h1>
-      <table >
+      <table border="3">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -17,7 +18,6 @@
             <th>Descripcion</th>
             <th>Precio</th>
             <th>Oferta</th>
-            <th>Menu</th>
           </tr>
         </thead>
         <tbody>
@@ -35,5 +35,6 @@
       </table>
 
     </center>
+    {% endblock cuerpo %}
   </body>
 </html>
