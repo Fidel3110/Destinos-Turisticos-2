@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <tr>
+            <table>
+                <thead>
+                    <th>NOMBRE</th>
+                    <th>IMAGEN</th>
+                    <th>DESCRIPCION</th>
+                    <th>PRECIO</th>
+                    <th>OFERTA</th>
+                </thead>
+                <tbody>
+                    {%for destinos in destinos%}
+                    <tr>
+                        <td>{{destino.name}}</td>
+                        <td>{{destino.img}}</td>
+                        <td>{{destino.desc}}</td>
+                        <td>{{destino.price}}</td>
+                        <td>{{destino.offer}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </tr>
+    </body>
