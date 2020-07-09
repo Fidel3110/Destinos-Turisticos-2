@@ -3,8 +3,7 @@
     <head>
         <center>
         <br><br><br><br>
-        
-        <H1>REGISTER</H1>
+        <H1>REGISTRAR DESTINO</H1>
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>USUARIOS</title>
@@ -19,11 +18,11 @@
         <form action="register" method="post">
             {% csrf_token %}
             <label for="destino" class="form-label">Destino</label>
-            <input type="text" name="destino" placeholder="Ingrese el nombre del destino" ><br><br>
+            <input type="text" name="name" placeholder="Ingrese el nombre del destino" ><br><br>
             <label for="descripcion" class="form-label">Descripcion:</label>
-            <input type="text" name="descripcion" placeholder="Ingrese descripcion"><br><br>
+            <input type="text" name="desc" placeholder="Ingrese descripcion"><br><br>
             <label for="imagen" class="form-label">Imagen:</label>
-            <input type="src" name="imagen" placeholder="Imagen"><br><br>
+            <input type="ImageField" name="img" placeholder="Imagen"><br><br>
             <label for="nombre" price="form-label">Price:</label>
             <input type="Integer" name="price" placeholder="Price"><br><br>
             <label for="offer" price="form-label">Offer:</label>
