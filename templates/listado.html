@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <title>{% block titulo%}Lista de Destinos{% endblock titulo%} </title>
   </head>
-  <body>
+  <body  style="background-image:url(/static/images/fon1.jpg)">
     {% block cuerpo %}
     <center>
+    <br><br><br><br><br><br><br><br>
     <h1>Lista de Destinos Turisticos</h1>
+    <br><br>
       <table border="3">
         <thead>
           <tr>
@@ -18,6 +20,7 @@
             <th>Descripcion</th>
             <th>Precio</th>
             <th>Oferta</th>
+            <th>Opcion</th>
           </tr>
         </thead>
         <tbody>
@@ -28,7 +31,7 @@
             <td>{{destino.desc}}</td>
             <td>{{destino.price}}</td>
             <td>{{destino.offer}}</td>
-
+            <td> <a href="{% url 'editar' destino.id %}">EDITAR</a> <a href="{% url 'eliminar' destino.id %}">ELIMINAR</a></td>
           </tr>
           {% endfor %}
         </tbody>
