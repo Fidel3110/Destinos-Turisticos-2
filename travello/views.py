@@ -4,7 +4,10 @@ from .forms import DestinationForm
 # Create your views here.
 def index(request):
     dest = Destination.objects.all()
-    return render(request, 'index.html', {'dest': dest})
+    contexto ={
+        'dest':dest
+    }
+    return render(request, 'index.html', contexto)
 
 def listado(request):
     destinos = Destination.objects.all()

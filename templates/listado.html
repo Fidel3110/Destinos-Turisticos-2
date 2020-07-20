@@ -5,9 +5,43 @@
   <head>
     <meta charset="utf-8">
     <title>{% block titulo%}Lista de Destinos{% endblock titulo%} </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
   </head>
   <body  style="background-image:url(/static/images/fon1.jpg)">
     {% block cuerpo %}
+    
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div class="logo"><a href="index.html">TRAVELLO</a></div>
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li><a href="crear">Crear</a></li>
+									<li><a href="listado">Listado</a></li>
+									<li><a href="index">Home</a></li>
+								</ul>
+							</nav>
+							<div class="header_phone ml-auto">Call us: 973 273 019</div>
+
+							<!-- Hamburger -->
+
+							<div class="hamburger ml-auto">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</header>
+
+	
     <center>
     <br><br><br><br><br><br><br><br>
     <h1>Lista de Destinos Turisticos</h1>
@@ -36,7 +70,6 @@
           {% endfor %}
         </tbody>
       </table>
-
     </center>
     {% endblock cuerpo %}
   </body>
