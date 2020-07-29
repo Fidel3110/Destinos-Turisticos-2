@@ -1,55 +1,25 @@
 from django.shortcuts import render, redirect
-from .models import Destination
-from .forms import DestinationForm
+from .models import Productos
+from .forms import ProductosForm
+from django.contrib import messages
+from django.contrib.auth.models import User, auth
 # Create your views here.
-def index(request):
-    dest = Destination.objects.all()
+def home(request):
+    dest = Productos.objects.all()
     contexto ={
         'dest':dest
     }
-    return render(request, 'index.html', contexto)
-
-def listado(request):
-    destinos = Destination.objects.all()
-    contexto = {
-    'destinos':destinos
-    }
-    return render(request,'listado.html', contexto)
-
-def crear(request):
-    if request.method == 'GET':
-        form = DestinationForm()
-        contexto ={
-            'form':form
-        }
+    return render(request, 'home.html', contexto)
+def login(request):
+    if request.method=='POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username= username, password= password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('login')
+        else:
+            messages.info(request,'Datos incorrectos')
+            return redirect('login')
     else:
-        form = DestinationForm(request.POST, request.FILES)
-        contexto ={
-            'form':form
-        }
-        if form.is_valid():
-            form.save()
-            return redirect('listado')
-    return render(request,'crear.html', contexto)
-def editar(request,id):
-    destinos = Destination.objects.get(id=id)
-    if request.method == 'GET':
-        form = DestinationForm(instance = destinos)
-        contexto ={
-        'form':form
-        }
-    else:
-        form = DestinationForm(request.POST, instance = destinos)
-        contexto ={
-        'form':form
-        }
-        if form.is_valid():
-            form.save()
-            return redirect('listado')
-    return render(request, 'crear.html', contexto)
-
-def eliminar(request,id):
-    destinos = Destination.objects.get(id=id)
-    destinos.delete()
-
-    return redirect('listado')
+        return render(request,'login.html')

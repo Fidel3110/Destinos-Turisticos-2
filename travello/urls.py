@@ -1,9 +1,6 @@
 from django.urls import path
 from .import views
 urlpatterns= [
-    path('index', views.index, name='index'),
-    path('listado', views.listado, name='listado'),
-    path('crear', views.crear, name='crear'),
-    path('editar/<int:id>/', views.editar, name='editar'),
-    path('eliminar/<int:id>/', views.eliminar, name='eliminar')
+    path('home', views.home, name='home'),
+    path('login', views.login, name='login')
 ]
